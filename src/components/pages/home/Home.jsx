@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import Sidebar from './Sidebar';
-import Header from './Header';
+import Sidebar from './sidebar/Sidebar';
+import Header from './header/Header';
 
 export default class Home extends Component {
     render() {
         return (
             <div>
-                <div class="wrapper">
+                <div className="wrapper">
                     <Sidebar />
                     <div id="content">
                         <Header />
                     </div>
                 </div>
-            </div>
+            </div >
         )
     }
 }
