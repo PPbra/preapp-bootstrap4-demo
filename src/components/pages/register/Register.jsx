@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { withRouter } from "react-router-dom";
 
-export default class Register extends Component {
+class Register extends Component {
     render() {
         return (
             <div className="login-container">
@@ -24,7 +25,11 @@ export default class Register extends Component {
                                     </div>
                                     <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Đăng ký</button>
                                     <hr className="my-4"></hr>
-                                    <button className="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i className="fab fa-google mr-2"></i>Quay lại trang đăng nhập</button>
+                                    <button className="btn btn-lg btn-google btn-block text-uppercase" type="submit" onClick={(e)=>{
+                                        e.preventDefault();
+                                        this.props.history.push("/login");
+                                        
+                                    }}><i className="fab fa-google mr-2"></i>Quay lại trang đăng nhập</button>
                                 </div>
                             </div>
                         </div>
@@ -34,3 +39,6 @@ export default class Register extends Component {
         )
     }
 }
+
+
+export default withRouter(Register);

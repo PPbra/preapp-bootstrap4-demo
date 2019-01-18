@@ -8,6 +8,13 @@ import Login from '../pages/login/Login';
 import './App.css';
 
 class App extends Component {
+  componentDidMount() {
+    authenService.register(this, this.forceUpdate.bind(this));
+}
+
+componentWillUnmount() {
+    authenService.unregister(this);
+}
   render() {
     return (
       <div className="App" >
